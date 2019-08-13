@@ -1,0 +1,16 @@
+<h1>Flickr</h1>
+
+<% if @comments.any? %>
+<ul>
+  <% @comments.each do |comment| %>
+    <li><%= comment.text_body %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>there are no comments posted</p>
+<% end %>
+
+
+
+
+<p><%= link_to "Add a comment", new_comment_path(@comment) %></p>
