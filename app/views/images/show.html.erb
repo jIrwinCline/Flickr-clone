@@ -1,7 +1,19 @@
 <h1><%= @image.title %></h1>
 
 
+<% if @image.comments.any? %>
+  <h4>Here are the comments for this image:</h4>
 
+  <% @image.comments.each do |comment| %>
+    <ul>
+      <li>
+        <%= link_to comment.text_body, image_comment_path(@image, comment) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No comments are listed for this image.</p>
+<% end %>
 
 <p><%= link_to "Add a comment", new_image_comment_path(@image) %></p>
 

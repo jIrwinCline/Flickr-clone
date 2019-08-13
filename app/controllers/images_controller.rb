@@ -14,7 +14,6 @@ class ImagesController < ApplicationController
     # image_params[:user_id] = current_user.id
     @image = Image.new(image_params)
     # @image.user_id = current_user.id
-    byebug
     if @image.save
       flash[:notice] = "Image successfully posted!"
       redirect_to images_path

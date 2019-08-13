@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2019_08_13_152922) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
+    t.integer "image_id"
+    t.string "text_body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,7 +26,6 @@ ActiveRecord::Schema.define(version: 2019_08_13_152922) do
     t.string "title"
     t.string "comments"
     t.integer "favorites"
-    t.integer "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

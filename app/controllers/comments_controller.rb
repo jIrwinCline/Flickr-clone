@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def create
     @image = Image.find(params[:image_id])
     @comment = @image.comments.new(comment_params)
-    if @comment.save
+    if @comment.save!
       flash[:notice] = "Comment successfully added!"
       redirect_to image_path(@image)
     else
@@ -58,7 +58,7 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:profile_id, :text_body, :favorites)
+      params.require(:comment).permit(:text_body)
       #tages params
     end
 
