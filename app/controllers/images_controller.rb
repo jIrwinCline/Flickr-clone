@@ -6,14 +6,15 @@ class ImagesController < ApplicationController
 
   def new
     @image = Image.new
-    @user_id = current_user.id
+    # @user_id = current_user.id
     render :new
   end
 
   def create
-    image_params[:user_id] = current_user.id
+    # image_params[:user_id] = current_user.id
     @image = Image.new(image_params)
-    @image.user_id = current_user.id
+    # @image.user_id = current_user.id
+    byebug
     if @image.save
       flash[:notice] = "Image successfully posted!"
       redirect_to images_path
@@ -53,6 +54,6 @@ class ImagesController < ApplicationController
   private
   def image_params
 
-    params.require(:image).permit(:title, :text_body)
+    params.require(:image).permit(:title)
   end
 end

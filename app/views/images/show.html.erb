@@ -1,0 +1,13 @@
+<h1><%= @image.title %></h1>
+
+
+
+
+<p><%= link_to "Add a comment", new_image_comment_path(@image) %></p>
+
+<p><%= link_to "Edit", edit_image_path(@image) %></p>
+<p><%= link_to "Delete image", image_path(@image),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to images", images_path %></p>

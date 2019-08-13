@@ -1,7 +1,7 @@
 <h1>Image</h1>
 <ul>
   <% @images.each do |image| %>
-    <li><%= link_to image.name, image_path(image) %></li>
+    <li><%= link_to image.title, image_path(image) %></li>
   <% end %>
 </ul>
 
