@@ -1,4 +1,5 @@
-<h1><%= @image.title %></h1>
+<%= image_tag(@post.url(:medium)) %>
+<h3><%= @image.caption %></h3>
 
 
 <% if @image.comments.any? %>

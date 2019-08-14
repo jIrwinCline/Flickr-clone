@@ -13,6 +13,8 @@
     <ul class="hmenu">
       <%= render 'devise/menu/registration_items' %>
       <%= render 'devise/menu/login_items' %>
+      <%= link_to "Home", root_url, class: "navbar-brand" %>
+      <%= link_to "Post Image", new_image_path %>
     </ul>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

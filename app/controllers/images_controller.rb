@@ -8,14 +8,18 @@ before_action :authorize, except: [:show, :index]
 
   def new
     @image = Image.new
+    @user = User.find(current_user.id)
+    byebug
     # @user_id = current_user.id
     render :new
   end
 
   def create
+    # @user = User.find(current_user.id)
     # image_params[:user_id] = current_user.id
     @image = Image.new(image_params)
-    # @image.user_id = current_user.id
+    byebug
+    @image.user_id = current_user.id
     if @image.save!
       flash[:notice] = "Image successfully posted!"
       redirect_to images_path
@@ -55,6 +59,6 @@ before_action :authorize, except: [:show, :index]
   private
   def image_params
 
-    params.require(:image).permit(:title)
+    params.require(:image).permit(:pic, :caption)
   end
 end

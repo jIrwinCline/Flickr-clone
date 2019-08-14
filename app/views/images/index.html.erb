@@ -1,7 +1,11 @@
-<h1>Image</h1>
+<h1>Flickr</h1>
 <ul>
   <% @images.each do |image| %>
-    <li><%= link_to image.title, image_path(image) %></li>
+
+    <%= image_tag image.pic%>
+    <br>
+    <%= image.caption %>
+
   <% end %>
 </ul>
 
