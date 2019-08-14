@@ -3,7 +3,11 @@
 <% if @comments.any? %>
 <ul>
   <% @comments.each do |comment| %>
-    <li><%= comment.text_body %></li>
+
+    <li>
+      <%= comment.email %><br />
+      <%= comment.text_body %>
+    </li>
   <% end %>
 </ul>
 <% else %>

@@ -1,4 +1,4 @@
-<%= image_tag(@image.pic) %>
+<%= image_tag(@image.pic, style:"width:30%") %>
 <h3><%= @image.caption %></h3>
 
 
@@ -8,7 +8,14 @@
   <% @image.comments.each do |comment| %>
     <ul>
       <li>
-        <%= link_to comment.text_body, image_comment_path(@image, comment) %>
+        <%=
+        #link_to 
+        comment.email#, user_path(@user_id)
+        %><br />
+
+
+          <%= comment.text_body %>
+
       </li>
     </ul>
   <% end %>
