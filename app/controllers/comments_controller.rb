@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authorize, except: [:show, :index]
   def index
     @comments = Comment.all
     render :index

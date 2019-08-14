@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+before_action :authorize, except: [:show, :index]
+
   def index
     @images = Image.all
     render :index
@@ -14,7 +16,7 @@ class ImagesController < ApplicationController
     # image_params[:user_id] = current_user.id
     @image = Image.new(image_params)
     # @image.user_id = current_user.id
-    if @image.save
+    if @image.save!
       flash[:notice] = "Image successfully posted!"
       redirect_to images_path
     else
