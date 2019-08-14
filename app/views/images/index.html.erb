@@ -2,7 +2,10 @@
 <ul>
   <% @images.each do |image| %>
 
-    <%= image_tag image.pic%>
+    <%= image_tag image.pic %>
+
+    <%= link_to image_tag(image.pic), image_path(image) %>
+
     <br>
     <%= image.caption %>
 
