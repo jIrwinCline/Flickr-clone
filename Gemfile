@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

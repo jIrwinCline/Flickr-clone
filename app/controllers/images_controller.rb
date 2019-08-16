@@ -2,7 +2,9 @@ class ImagesController < ApplicationController
 before_action :authorize, except: [:show, :index]
 
   def index
-    @user_id = current_user.id
+    if current_user
+      @user_id = current_user.id
+    end
     @images = Image.all
     render :index
   end
