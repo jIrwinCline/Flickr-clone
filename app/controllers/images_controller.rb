@@ -12,7 +12,6 @@ before_action :authorize, except: [:show, :index]
   def new
     @image = Image.new
     @user = User.find(current_user.id)
-    byebug
     # @user_id = current_user.id
     render :new
   end
@@ -21,7 +20,6 @@ before_action :authorize, except: [:show, :index]
     # @user = User.find(current_user.id)
     # image_params[:user_id] = current_user.id
     @image = Image.new(image_params)
-    byebug
     @image.user_id = current_user.id
     if @image.save!
       flash[:notice] = "Image successfully posted!"
