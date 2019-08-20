@@ -1,0 +1,21 @@
+
+
+.surround {
+
+  padding-bottom: 50px;
+}
+
+.card-separator {
+  border-top: solid;
+  border-width: 1px;
+}
+.card-border {
+  border: solid;
+
+}
+
+.center-card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
