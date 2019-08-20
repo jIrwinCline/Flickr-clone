@@ -11,5 +11,6 @@ user = User.new
 user.email = 'jakobinwins@gmail.com'
 user.password = 'ibanez12'
 user.password_confirmation = 'ibanez12'
+user.admin = true
 # user.encrypted_password = '$2a$11$5fLUUQX30YkEXC6Z7m7WbeUlt6ApihF8Nrw5G1g.aeCrEIubIPArq'
 user.save!
