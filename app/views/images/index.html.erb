@@ -4,8 +4,8 @@
     <div class="surround">
       <div class="card center-card" style="width: 34rem;">
         <%= link_to image_tag(image.pic, style:"width: 300px;", class:"card-img-top"), image_path(image) %><br />
-        <div class="card-body">
-          <h5 class="card-title">User Name</h5>
+        <div class="card-body card-separator">
+          <h5 class="card-title"><%= image.email %></h5>
           <p class="card-text"><%= image.caption %></p><br />
         </div>
       </div>
